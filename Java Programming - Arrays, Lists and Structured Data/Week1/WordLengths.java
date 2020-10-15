@@ -6,16 +6,19 @@ public class WordLengths {
         
         for(String s:resource.words())
         {
+            
+            
             int length=s.length();
+            System.out.println(length+"    "+s);
             if(length>30)
                 length=30;
             counts[length]++;
-            if(!Character.isLetter(s.charAt(0)))
+            if(!Character.isLetterOrDigit(s.charAt(0)))
             {
                 counts[length]--;
                 counts[--length]++;
             }
-            if(!Character.isLetter(s.charAt(length-1)))
+            if(!Character.isLetterOrDigit(s.charAt(length-1)))
             {
                 counts[length]--;
                 counts[--length]++;
